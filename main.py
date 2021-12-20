@@ -52,8 +52,8 @@ if __name__ == '__main__':
     userCords = LocInfo()
     issCords = ISSInfo()
 
-    MY_EMAIL = "jacob.coomer7@gmail.com"
-    MY_PASSWORD = "A1s4Alfred123"
+    MY_EMAIL = ""
+    MY_PASSWORD = ""
 
     recentMail = False
     while(True):
