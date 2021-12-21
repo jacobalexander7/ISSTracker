@@ -1,5 +1,11 @@
+# Jacob Coomer
+# This program queries open-notify for the current ISS location.
+# After comparing to user data, the program sends an email to the user when the ISS
+# is visible in the sky. 
 import requests
 import json
+import sys
+import os
 from datetime import datetime
 import smtplib
 import time
@@ -48,12 +54,20 @@ def Night(u):
         return False
 
 
+
 if __name__ == '__main__':
     userCords = LocInfo()
     issCords = ISSInfo()
 
-    MY_EMAIL = ""
-    MY_PASSWORD = ""
+    with open(os.path.join(sys.path[0], "config.txt"), "r") as f:
+        info = f.read()
+        info = info.split(" ")
+
+
+    MY_EMAIL = info[1]
+    MY_PASSWORD = info[3]
+
+    print(MY_EMAIL + MY_PASSWORD)
 
     recentMail = False
     while(True):
